@@ -5,6 +5,7 @@ import pymongo
 import requests
 from splinter import Browser
 import time
+from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_info():
     # browser = init_browser()
