@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars.</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Latest Mars News</h3>
+      </div>
+    </div>
+    <br>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h4>{{mars_info.news_title}}</h4>
+        <p>{{mars_info.news_info}}</p>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-md-8">
+        <h4>Featured Mars Image</h4>
+        <p>{{mars_info.featured_image_url}}</p>
+      </div>
+    
+      <div class="col-md-4">
+        <h4>Mars Facts</h4>
+        <p>{{mars_info.fun_facts_table}}</p>
+      </div>
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Mars Hemisphere</h4>
+        <p>{{mars_info.hems_link}}</p>
+      </div>
+    </div>
+    <br>
+    
+    "news_title": title,
+        "news_info": teaser,
+        "featured_image_url": featured_image_url,
+        "fun_facts_table": mars_html_table,
+        "hemisphere_info": hems_link
+
+
+    <img src="{{ vacation.sloth_img }}" alt="Sloth">
+    <h2>The typical weather in Costa Rica is:</h2>
+    <h3>Max Temp: {{ vacation.max_temp }}</h3>
+    <h3>Min Temp: {{ vacation.min_temp }}</h3>
+  </div>
+  </div>
+</body>
+
+</html>
