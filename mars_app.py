@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 import scrape_phone
 
+# Crate flask
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
@@ -15,10 +16,10 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     mars_data_dict = mongo.db.mars_data_dict.find_one()
-    return render_template("index.html", mars_data_dict=mars_data_dict)
+    return render_template("index.html", mars_info=mars_data_dict)
 
 
-@app.route("/scrape")
+@app.route("/scrape_info")
 def scraper():
     mars_data_dict = mongo.db.mars_data_dict
     mars_data = scrape_mars.scrape()
