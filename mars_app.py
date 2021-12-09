@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
-import scrape_phone
+import scrape_mars
 
 # Crate flask
 app = Flask(__name__)
