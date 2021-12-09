@@ -11,7 +11,7 @@ def scrape_info():
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
-    mars_data_dict = {}
+    # mars_data_dict = {}
 
     # Set scraper to retreive image from Mars url 
     mars_url = 'https://redplanetscience.com/'
@@ -19,6 +19,7 @@ def scrape_info():
 
     time.sleep(1)
 
+    #Assign HTML content to variable    
     html = browser.html
     mars_soup = bs(html, 'html.parser')
 
@@ -29,6 +30,10 @@ def scrape_info():
     # Set scraper to retreive image from JPL url
     jpl_url = 'https://spaceimages-mars.com/'
     browser.visit(jpl_url)
+
+    time.sleep(1)
+
+    #Assign HTML content to variable
     html = browser.html
     jpl_soup = bs(html, 'lxml')
 
@@ -47,7 +52,7 @@ def scrape_info():
     facts_df.columns = ['Description', 'Mars', 'Earth']
 
     # Create html table from Dataframe
-    mars_html_table = facts_df.to_html()
+    mars_html_table = facts_df.to_html(border="1", justify="left")
 
     # Remove newlines
     mars_html_table.replace('\n', '')
@@ -55,6 +60,10 @@ def scrape_info():
     # Set scraper to retreive images from Mars Hemisheres url
     hems_url = 'https://marshemispheres.com/'
     browser.visit(hems_url)
+
+    time.sleep(1)
+
+    #Assign HTML content to variable    
     html = browser.html
     hems_soup = bs(html, 'lxml')
 
