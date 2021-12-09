@@ -8,7 +8,7 @@ import time
 
 def scrape_info():
     # browser = init_browser()
-    executable_path = {'executable_path': /Users/nepanji/.wdm/drivers/chromedriver/mac64/96.0.4664.45/chromedriver}
+    executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
     mars_data_dict = {}
