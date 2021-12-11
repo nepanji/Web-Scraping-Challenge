@@ -100,7 +100,7 @@ def scrape_info():
         "news_title": title,
         "news_info": teaser,
         "featured_image_url": featured_image_url,
-        "fun_facts_table": mars_html_table,
+        "fun_facts_table": str(mars_html_table),
         "hemisphere_info": hems_link
     }
 
