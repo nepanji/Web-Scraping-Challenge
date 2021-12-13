@@ -20,7 +20,6 @@ def index():
     # Return template and data
     return render_template("index.html", mars_info=mars_data_dict)
 
-
 @app.route("/scrape")
 def scraper():
 

@@ -35,44 +35,41 @@
     </div>
     <br>
 
+    <h4>Featured Mars Image</h4>
     <div class="row">
-      <div class="col-md-8">
-        <h4>Featured Mars Image</h4>
-        <p>{{mars_info.featured_image_url}}</p>
+      <div class="col-md-7">
+        <br>
+        <img src="{{mars_info.featured_image_url}}" alt="Featured Mars Image">
       </div>
     
-      <div class="col-md-4">
-        <h4>Mars Facts</h4>
-        <p>{{mars_info.fun_facts_table}}</p>
+      <div class="col-md-5">
+        <div class="table table-striped"
+        <h3><b>Mars Facts</b></h3><br>
+        {{mars_info.fun_facts_table | safe}}
       </div>
     </div>
     <br>
     
     <div class="row">
       <div class="col-md-12">
-        <h4>Mars Hemisphere</h4>
-        {% for image_url in  mars_info.hemisphere_info %}
-        <div class="col-md-12 col-sm-8">
-          <div class="boxmargin">
-              <img src="{{img_url.}}
+        <h4 class="align-items-center">Mars Hemisphere</h4><br>
+      </div>
+    <div class="row"
+      <div class="col-md-8"><br>
+      {% for each in mars_info.hemisphere_info%}
+            <div>
+              <h5> {{each.title | safe}} </h5>
+            </div>
+
+            <div>
+              <img src="{{each.img_url | safe}}">
+            </div>
+            
+
           </div>
-      </div>
-      </div>
-    </div>
-    <div class="row">
-      {% for image_url in  marspage.hemisphere_image_urls %}
-      <div class="col col-6">
-          <div class="boxmargin">
-              <img src={{image_url.img_url}} alt={{image_url.img_url}}>
-              <h3>{{image_url.title}}</h3>
-          </div>
-      </div>
       {% endfor %}
   </div>
-    <br>
-    
-    </div>
-  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 

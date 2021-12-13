@@ -8,11 +8,9 @@ import time
 from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_info():
-    # browser = init_browser()
     executable_path = {'executable_path': ChromeDriverManager().install()}
     browser = Browser('chrome', **executable_path, headless=False)
 
-    # mars_data_dict = {}
 
     # Set scraper to retreive image from Mars url 
     mars_url = 'https://redplanetscience.com/'
@@ -77,13 +75,13 @@ def scrape_info():
 
     # Iterate through to locate each hemisphere title and image
 
-    for each in each_hemisphere:
+    for one in each_hemisphere:
         # Find the title of the image
-        hems_title = each.find("h3").text
+        hems_title = one.find("h3").text
         hems_title = hems_title.replace("Enhanced", "")
         
         #Find the image url
-        image = each.find('img', class_= "thumb")["src"]
+        image = one.find('img', class_= "thumb")["src"]
 
         # Create featured image url
         img_url = hems_url + image
